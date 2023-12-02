@@ -1,11 +1,11 @@
 <script setup lang="ts">
-// import Card from './Card.vue';
-// import RocketIcon from './RocketIcon.vue';
+import Card from './Card.vue';
+import RocketIcon from './RocketIcon.vue';
 </script>
 
 <template>
   <div class="container">
-    <!-- <Card title="Title" class="card">
+    <Card title="Title" class="card">
       <div class="contents">
         ここにさまざまなコンテンツが入ります
         <RocketIcon />
@@ -19,6 +19,10 @@
         <RocketIcon />
         <RocketIcon />
       </div>
+      <template #footer>
+        <span>This is Footer</span>
+        <RocketIcon size="20px" />
+      </template>
     </Card>
 
     <Card title="Icons with Text" class="card with-text-card">
@@ -27,7 +31,7 @@
         <span>Rocket</span>
         <RocketIcon />
       </div>
-    </Card> -->
+    </Card>
   </div>
 </template>
 
