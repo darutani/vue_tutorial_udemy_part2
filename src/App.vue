@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import PersonList from './components/PersonList.vue';
-import PersonPostForm from './components/PersonPostForm.vue';
+import Persons from './components/Persons.vue';
 
 
 </script>
 
 <template>
-  <PersonPostForm />
-  <PersonList />
+    <Persons />
 </template>
 
 <style>
