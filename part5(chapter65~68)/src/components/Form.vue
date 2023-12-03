@@ -1,4 +1,16 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
+const userName = ref<string>('')
+
+// v-focus
+const vFocus = {
+  mounted: (el: HTMLElement) => {
+    el.focus()
+    // console.log('mounted')
+  }
+}
+
 </script>
 
 <template>
@@ -9,7 +21,7 @@
     </div>
     <div class="form-control">
       <label for="age">Your Age</label>
-      <input id="age" name="age" type="number" />
+      <input id="age" name="age" type="number" v-focus />
     </div>
     <div class="form-control">
       <label for="from">Where Are you from?</label>
