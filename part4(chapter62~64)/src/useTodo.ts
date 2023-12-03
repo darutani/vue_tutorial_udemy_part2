@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { InjectionKey, ref } from 'vue';
 
 type Todo = {
     id: number,
@@ -15,7 +15,7 @@ const defaultTodos = [{ id: 0, title: 'first' }, { id: 1, title: 'second' }]
 //     todos.value.push(newTodo)
 // }
 
-export const todos = (() => {
+export const todosComponent = (() => {
     const todos = ref<Todo[]>(defaultTodos)
     const addTodo = (title: string) => {
         const newTodo: Todo = {
@@ -26,4 +26,7 @@ export const todos = (() => {
     }
 
     return { todos, addTodo }
-})()
+})();
+
+type TodosType = typeof todosComponent
+export const todoKey: InjectionKey<TodosType> = Symbol('useTodos')
