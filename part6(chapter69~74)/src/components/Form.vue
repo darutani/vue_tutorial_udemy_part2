@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import axios from 'axios';
 
 const vFocus = {
   mounted: (el: HTMLElement) => {
@@ -11,6 +12,17 @@ const userName = ref<string>('')
 const interest = ref([])
 
 const onSubmit = (e: Event) => {
+  // fetch('https://vue-example-53238-default-rtdb.firebaseio.com/surveys.json', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify({ name: userName.value, interest: interest.value })
+  // })
+  axios.post('https://vue-example-53238-default-rtdb.firebaseio.com/surveys.json', {
+    name: userName.value,
+    interest: interest.value,
+  })
   interest.value = []
 }
 
